@@ -24,8 +24,8 @@
 			</form>
 			<div ng-repeat="pictures in results.photos.photo| limitTo: pageLimits">
 				<md-card>
-					<a href="https://farm{{pictures.farm}}.staticflickr.com/{{pictures.server}}/{{pictures.id}}_{{pictures.secret}}_c.jpg">
-						<img ng-src="https://farm{{pictures.farm}}.staticflickr.com/{{pictures.server}}/{{pictures.id}}_{{pictures.secret}}_c.jpg" alt="" class="md-card-image"/>
+					<a href="https://farm{{pictures.farm}}.staticflickr.com/{{pictures.server}}/{{pictures.id}}_{{pictures.secret}}_b.jpg" download="{{pictures.id}}_{{pictures.secret}}_b.jpg">
+						<img ng-src="https://farm{{pictures.farm}}.staticflickr.com/{{pictures.server}}/{{pictures.id}}_{{pictures.secret}}_n.jpg" alt="" class="md-card-image"/>
 						<h3> {{pictures.title}}</h3>
 					</a>
 				</md-card>
