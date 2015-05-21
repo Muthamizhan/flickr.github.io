@@ -17,12 +17,11 @@
 		<div class="app-content">
 			<form ng-submit="search()">
 				<div ng-show="!isSearching">
-				<md-input-container><label>Search for</label><input class="long" name="searchTerm" ng-model="searchTerm" autofocus>
-				</md-input-container>
+				<md-input-container><label>Search for</label><input class="long" name="searchTerm" ng-model="searchTerm" autofocus></md-input-container>
 				</div>
 				<md-progress-circular class="progress-bar" ng-if="isSearching" md-mode="indeterminate"></md-progress-circular>
 			</form>
-			<div ng-repeat="pictures in results.photos.photo| limitTo: pageLimits" class="animate-repeat" ng-animate="'animate'">
+			<div ng-repeat="pictures in results.photos.photo| limitTo: pageLimits"  ng-animate="'animate'">
 				<md-card>
 					<a href="https://farm{{pictures.farm}}.staticflickr.com/{{pictures.server}}/{{pictures.id}}_{{pictures.secret}}_b.jpg" download="{{pictures.id}}_{{pictures.secret}}_b.jpg">
 						<img ng-src="https://farm{{pictures.farm}}.staticflickr.com/{{pictures.server}}/{{pictures.id}}_{{pictures.secret}}_n.jpg" alt="" class="md-card-image"/>
@@ -31,7 +30,10 @@
 				</md-card>
 			</div>
 			<div layout="row" layout-align="center center">
-				<md-button class="md-primary md-raised" ng-show="hasMore()" ng-click="showMoreItems()">Load More</md-button>
+				<md-button class="md-primary md-raised" ng-show="hasMore()" ng-click="showMoreItems()">Load More
+					<md-tooltip visible="showTooltip"> Load more simages </md-tooltip>
+				</md-button>
+
 			</div>
 		</div>
 		</md-content>

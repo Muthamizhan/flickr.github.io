@@ -45,5 +45,4 @@
              return $scope.pageLimits < ($scope.totalItems);
              console.log($scope.pageLimits < ($scope.totalItems));
          };
-     }
- ]);
+}]);
