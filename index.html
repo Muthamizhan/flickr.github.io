@@ -10,7 +10,7 @@
 	<body ng-app="flickrApp" ng-controller="ListController" layout="column" layout-aling="top center">
 		<md-toolbar>
 			<div class="md-toolbar-tools">
-				<span class="md-flex"> Flicker Search</span>
+				<span class="md-flex"> Flickr Search</span>
 			</div>
 		</md-toolbar>
 		<md-content layout="column" layout-align="center center">
@@ -22,7 +22,7 @@
 				</div>
 				<md-progress-circular class="progress-bar" ng-if="isSearching" md-mode="indeterminate"></md-progress-circular>
 			</form>
-			<div ng-repeat="pictures in results.photos.photo| limitTo: pageLimits">
+			<div ng-repeat="pictures in results.photos.photo| limitTo: pageLimits" class="animate-repeat" ng-animate="'animate'">
 				<md-card>
 					<a href="https://farm{{pictures.farm}}.staticflickr.com/{{pictures.server}}/{{pictures.id}}_{{pictures.secret}}_b.jpg" download="{{pictures.id}}_{{pictures.secret}}_b.jpg">
 						<img ng-src="https://farm{{pictures.farm}}.staticflickr.com/{{pictures.server}}/{{pictures.id}}_{{pictures.secret}}_n.jpg" alt="" class="md-card-image"/>

@@ -1,4 +1,4 @@
- var app = angular.module("flickrApp", ['ngMaterial']);
+ var app = angular.module("flickrApp", ['ngAnimate','ngMaterial']);
 
  app.controller('ListController', ['$scope', '$http',
      function($scope, $http) {

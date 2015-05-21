@@ -13,3 +13,12 @@ md-card{
 .progress-bar{
 	margin: 0 auto;
 }
+
+.animate-repeat {
+    line-height:40px;
+    list-style:none;
+    /*box-sizing:border-box;*/
+    border-bottom: 1px solid white;
+    -webkit-transition: 1s linear all;
+    transition: 1s linear all;
+}
