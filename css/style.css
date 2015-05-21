@@ -10,3 +10,6 @@ md-input-group.long>input{
 md-card{
 	padding: 10px;
 }
+.progress-bar{
+	margin: 0 auto;
+}

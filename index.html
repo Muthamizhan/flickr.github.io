@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 	<head>
 		<title>Material design</title>
 		<link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
@@ -16,18 +17,22 @@
 		<div class="app-content">
 			<form ng-submit="search()">
 				<div ng-show="!isSearching">
-				<md-input-container><label>Search for</label><input class="long" name="searchTerm" ng-model="searchTerm">
+				<md-input-container><label>Search for</label><input class="long" name="searchTerm" ng-model="searchTerm" autofocus>
 				</md-input-container>
 				</div>
-				<md-progress-circular ng-if="isSearching" md-mode="indeterminate"></md-progress-circular>
+				<md-progress-circular class="progress-bar" ng-if="isSearching" md-mode="indeterminate"></md-progress-circular>
 			</form>
 			<div ng-repeat="pictures in results.photos.photo| limitTo: pageLimits">
 				<md-card>
-					<img ng-src="https://farm{{pictures.farm}}.staticflickr.com/{{pictures.server}}/{{pictures.id}}_{{pictures.secret}}_b.jpg" alt="" class="md-card-image"/>
-					<h3> {{pictures.title}}</h3>
+					<a href="https://farm{{pictures.farm}}.staticflickr.com/{{pictures.server}}/{{pictures.id}}_{{pictures.secret}}_c.jpg">
+						<img ng-src="https://farm{{pictures.farm}}.staticflickr.com/{{pictures.server}}/{{pictures.id}}_{{pictures.secret}}_c.jpg" alt="" class="md-card-image"/>
+						<h3> {{pictures.title}}</h3>
+					</a>
 				</md-card>
 			</div>
-			<md-button class="md-warn md-raised" ng-show="hasMore()" ng-click="showMoreItems()">Load More</md-button>
+			<div layout="row" layout-align="center center">
+				<md-button class="md-primary md-raised" ng-show="hasMore()" ng-click="showMoreItems()">Load More</md-button>
+			</div>
 		</div>
 		</md-content>
 		<script src="bower_components/angular/angular.min.js"></script>
