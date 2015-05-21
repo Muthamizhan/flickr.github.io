@@ -6,7 +6,9 @@
          $scope.results = [];
          $scope.totalItems = [];
          $scope.pageLimits = '';
+         $scope.isSearching = false;
          $scope.search = function() {
+            $scope.isSearching = true;
          	$scope.pageLimits = 5;
              $http({
                  method: 'GET',
@@ -20,7 +22,8 @@
                  }
              }).success(function(data) {
              	$scope.results = data;
-             	$scope.totalItems=$scope.results.photos.photo.length
+             	$scope.totalItems=$scope.results.photos.photo.length;
+                $scope.isSearching = false;
                 console.log($scope.totalItems)
                  /*data.photos.photo.map(function(items) {
                      $scope.totalItems = items.length;
@@ -29,6 +32,7 @@
 
              }).error(function(error) {
                  console.error(error);
+                 $scope.isSearching = false;
              })
          };
 

@@ -15,9 +15,11 @@
 		<md-content layout="column" layout-align="center center">
 		<div class="app-content">
 			<form ng-submit="search()">
-				<!-- 	<md-text-float label="Search for" ng-model="searchTerm"></md-text-float> -->
+				<div ng-show="!isSearching">
 				<md-input-container><label>Search for</label><input class="long" name="searchTerm" ng-model="searchTerm">
 				</md-input-container>
+				</div>
+				<md-progress-circular ng-if="isSearching" md-mode="indeterminate"></md-progress-circular>
 			</form>
 			<div ng-repeat="pictures in results.photos.photo| limitTo: pageLimits">
 				<md-card>
